@@ -1,7 +1,7 @@
-# Dokument wymagań produktu (PRD) - 10xCards
+# Dokument wymagań produktu (PRD) - Memo Cards
 
 ## 1. Przegląd produktu
-10xCards to webowa aplikacja wspierająca intensywnie uczące się osoby w szybkim tworzeniu i utrzymaniu fiszek edukacyjnych. Produkt łączy automatyczne generowanie kart z tekstu przy pomocy AI, ręczną edycję oraz integrację z gotowym algorytmem powtórek. MVP zakłada pojedynczą listę fiszek na użytkownika, prosty system kont (email i hasło) oraz podstawowy interfejs webowy bez dodatkowych kanałów dystrybucji. Wdrożenie koncentruje się na dostarczeniu stabilnego przepływu pracy od generowania treści, przez weryfikację i akceptację kart, po ich wykorzystanie w sesjach powtórek.
+Memo Cards to webowa aplikacja wspierająca intensywnie uczące się osoby w szybkim tworzeniu i utrzymaniu fiszek edukacyjnych. Produkt łączy automatyczne generowanie kart z tekstu przy pomocy AI, ręczną edycję oraz integrację z gotowym algorytmem powtórek. MVP zakłada pojedynczą listę fiszek na użytkownika, prosty system kont (email i hasło) oraz podstawowy interfejs webowy bez dodatkowych kanałów dystrybucji. Wdrożenie koncentruje się na dostarczeniu stabilnego przepływu pracy od generowania treści, przez weryfikację i akceptację kart, po ich wykorzystanie w sesjach powtórek.
 
 ## 2. Problem użytkownika
 Docelowi użytkownicy (studenci, specjaliści, osoby uczące się samodzielnie) wiedzą, że fiszki i powtórki rozłożone w czasie są skuteczne, ale rezygnują, ponieważ ręczne tworzenie i utrzymanie dużej bazy kart jest czasochłonne i zniechęcające. Brak narzędzia, które pozwalałoby szybko przekształcić źródłowy tekst w gotowe fiszki, powoduje, że użytkownicy pozostają przy mniej efektywnych metodach nauki lub całkowicie porzucają regularne powtórki. Dodatkowo pojedyncze błędy w kartach trudno poprawić bez zagłębienia się w każdą kartę, co obniża zaufanie do procesu.
