@@ -18,7 +18,7 @@ Memo Cards is a web application that helps intensive learners turn raw study mat
 ## Project Description
 
 - Address the pain of building and maintaining large flashcard sets manually for students, professionals, and self-learners.
-- Provide a workflow that turns up to 10,000 characters of Polish source text into high-quality flashcards via AI, with optional manual edits.
+- Provide a workflow that turns up to 10,000 characters of source text into high-quality flashcards via AI, with optional manual edits.
 - Support end-to-end flashcard lifecycle: generation, review, acceptance, CRUD management, and repetition powered by an external spaced-repetition engine.
 - Collect actionable metrics for product owners, such as acceptance rates and counts of AI-generated versus manually created cards.
 
@@ -61,7 +61,7 @@ OPENROUTER_API_KEY=<your-openrouter-key>
 npm run dev
 ```
 
-The dev server exposes the Astro application with hot module reload. Review AI generation flows to ensure environment variables are wired correctly.
+The dev server exposes the Astro application with hot module reload.
 
 **Production build**
 
