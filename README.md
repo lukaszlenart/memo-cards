@@ -1,94 +1,112 @@
-# 10x Astro Starter
+# Memo Cards
 
-A modern, opinionated starter template for building fast, accessible, and AI-friendly web applications.
+![Node.js](https://img.shields.io/badge/node-22.14.0-43853d?logo=node.js&logoColor=white)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+
+Memo Cards is a web application that helps intensive learners turn raw study material into curated flashcards backed by spaced repetition. The MVP streamlines the journey from AI-assisted content generation through manual review to scheduled learning sessions.
+
+## Table of Contents
+
+- [Project Description](#project-description)
+- [Tech Stack](#tech-stack)
+- [Getting Started Locally](#getting-started-locally)
+- [Available Scripts](#available-scripts)
+- [Project Scope](#project-scope)
+- [Project Status](#project-status)
+- [License](#license)
+
+## Project Description
+
+- Address the pain of building and maintaining large flashcard sets manually for students, professionals, and self-learners.
+- Provide a workflow that turns up to 10,000 characters of Polish source text into high-quality flashcards via AI, with optional manual edits.
+- Support end-to-end flashcard lifecycle: generation, review, acceptance, CRUD management, and repetition powered by an external spaced-repetition engine.
+- Collect actionable metrics for product owners, such as acceptance rates and counts of AI-generated versus manually created cards.
 
 ## Tech Stack
 
-- [Astro](https://astro.build/) v5.5.5 - Modern web framework for building fast, content-focused websites
-- [React](https://react.dev/) v19.0.0 - UI library for building interactive components
-- [TypeScript](https://www.typescriptlang.org/) v5 - Type-safe JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) v4.0.17 - Utility-first CSS framework
+- **Frontend:** Astro 5, React 19, TypeScript 5, Tailwind CSS 4, Shadcn/ui, Lucide icons.
+- **Backend & Auth:** Supabase (PostgreSQL, authentication, SDKs).
+- **AI Integration:** OpenRouter.ai for AI model access and rate control.
+- **Tooling:** ESLint 9 with TypeScript/React plugins, Prettier, Tailwind Merge, Husky, lint-staged.
+- **DevOps & Hosting:** GitHub Actions for CI/CD, Docker deployment to DigitalOcean.
 
-## Prerequisites
+Additional internal documentation: `.ai/prd.md` (product requirements) and `.ai/tech-stack.md` (technology decisions).
 
-- Node.js v22.14.0 (as specified in `.nvmrc`)
-- npm (comes with Node.js)
+## Getting Started Locally
 
-## Getting Started
+**Prerequisites**
 
-1. Clone the repository:
+- Node.js `22.14.0` (see `.nvmrc`).
+- npm (bundled with Node) or another Node package manager.
 
-```bash
-git clone https://github.com/przeprogramowani/10x-astro-starter.git
-cd 10x-astro-starter
-```
-
-2. Install dependencies:
+**Setup**
 
 ```bash
+git clone https://github.com/<your-org>/memo-cards.git
+cd memo-cards
 npm install
 ```
 
-3. Run the development server:
+Create a `.env` file with credentials for Supabase and OpenRouter before running the app. Example placeholders:
+
+```bash
+SUPABASE_URL=<your-supabase-url>
+SUPABASE_ANON_KEY=<your-supabase-anon-key>
+OPENROUTER_API_KEY=<your-openrouter-key>
+```
+
+**Local development**
 
 ```bash
 npm run dev
 ```
 
-4. Build for production:
+The dev server exposes the Astro application with hot module reload. Review AI generation flows to ensure environment variables are wired correctly.
+
+**Production build**
 
 ```bash
 npm run build
+npm run preview
 ```
 
 ## Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Astro development server with live reload. |
+| `npm run build` | Generate the production build. |
+| `npm run preview` | Serve the build output locally for verification. |
+| `npm run lint` | Run ESLint across the codebase. |
+| `npm run lint:fix` | Auto-fix lint issues where possible. |
+| `npm run format` | Format files with Prettier. |
 
-## Project Structure
+## Project Scope
 
-```md
-.
-├── src/
-│   ├── layouts/    # Astro layouts
-│   ├── pages/      # Astro pages
-│   │   └── api/    # API endpoints
-│   ├── components/ # UI components (Astro & React)
-│   └── assets/     # Static assets
-├── public/         # Public assets
-```
+**In scope for the MVP**
 
-## AI Development Support
+- Email/password registration, login, session handling, and logout.
+- CRUD operations for personal flashcards with validation limits (question ≤ 200 chars, answer ≤ 500 chars).
+- AI-powered flashcard generation from Polish input text up to 10,000 characters, including error handling, retries, and manual refinement.
+- Batch acceptance or rejection of generated sets, plus per-card edits or deletions before saving.
+- Spaced repetition sessions driven by an external library with minimal session persistence.
+- Metrics collection: generated vs accepted cards, manual cards, acceptance rates, and reporting access for the product owner.
+- Desktop-first UX with clear status messaging, contextual hints, and resilient fallback messaging for external service outages.
 
-This project is configured with AI development tools to enhance the development experience, providing guidelines for:
+**Out of scope (per PRD)**
 
-- Project structure
-- Coding practices
-- Frontend development
-- Styling with Tailwind
-- Accessibility best practices
-- Astro and React guidelines
+- Custom or proprietary spaced repetition algorithms.
+- Import/export integrations (files or external platforms) and sharing between users.
+- Mobile apps, push notifications, multi-deck management, tags, or history/version tracking.
+- Automated remediation for AI/library downtime beyond informing the user.
 
-### Cursor IDE
+## Project Status
 
-The project includes AI rules in `.cursor/rules/` directory that help Cursor IDE understand the project structure and provide better code suggestions.
-
-### GitHub Copilot
-
-AI instructions for GitHub Copilot are available in `.github/copilot-instructions.md`
-
-### Windsurf
-
-The `.windsurfrules` file contains AI configuration for Windsurf.
-
-## Contributing
-
-Please follow the AI guidelines and coding practices defined in the AI configuration files when contributing to this project.
+- Product requirements and technical stack decisions are documented and ready for implementation.
+- MVP delivery focuses on stability of the end-to-end flashcard workflow and reliable AI integrations.
+- Success will be tracked via AI acceptance ratio (≥75%), share of AI-generated cards, manual card volume, and weekly active study sessions.
+- Current roadmap prioritizes implementing authenticated flashcards, AI pipelines, and metrics dashboards before expansion.
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](./LICENSE).
